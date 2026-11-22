@@ -1,0 +1,35 @@
+# Local credentials and Python environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python and Jupyter artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Local editor and operating system files
+.DS_Store
+.idea/
+.vscode/
+
+# Local data and submission artifacts
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.log
+*.zip
+
+# Classroom assets are downloaded and used locally.
+/project_starter.ipynb
+/project_lib.py
