@@ -28,14 +28,21 @@ In PyCharm, select the interpreter from `.venv`. The notebook contains an instal
 
 If needed, copy `.env.example` to `.env` and set `OPENAI_API_KEY` locally. Set `OPENAI_BASE_URL` to the classroom's Vocareum endpoint when using a classroom-issued key. Leave the variable unset for a direct OpenAI key. [Vocareum configuration](https://help.vocareum.com/en/articles/9341351-genai-in-vocareum-labs)
 
-To use the ignored `.env` with the starter, replace the placeholder client setup in your local notebook with the following cell. The starter selects `gpt-4.1-mini` in the following cell.
+Replace the placeholder client setup in your local notebook with the cell below. It reads the key and endpoint together from the ignored `.env` in the notebook's working directory. The starter selects `gpt-4.1-mini` in the following cell.
 
 ```python
-from dotenv import load_dotenv
+from dotenv import dotenv_values
 from openai import OpenAI
 
-load_dotenv()
-client = OpenAI()
+settings = dotenv_values(".env", interpolate=False)
+api_key = settings.get("OPENAI_API_KEY")
+if not api_key:
+    raise RuntimeError("Set OPENAI_API_KEY in the local .env file.")
+
+client = OpenAI(
+    api_key=api_key,
+    base_url=settings.get("OPENAI_BASE_URL") or "https://api.openai.com/v1",
+)
 ```
 
 ## Assignment and submission
