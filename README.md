@@ -12,7 +12,7 @@ This repository documents the local development setup. The classroom notebook su
 
 ## Local setup
 
-The local setup was verified with Python 3.11.18 and Jupyter Notebook 7.6.5. Download `project_starter.ipynb` and `project_lib.py` from the AgentsVille project workspace in the Udacity Classroom and place both files next to this README. Set the repository root as the notebook working directory.
+The local setup was verified with Python 3.11.18 and Jupyter Notebook 7.6.5. Download `Project/project_starter.ipynb` and `Project/project_lib.py` from the AgentsVille project workspace in the Udacity Classroom and place both files next to this README. Set the repository root as the notebook working directory.
 
 ```sh
 python3.11 -m venv .venv
