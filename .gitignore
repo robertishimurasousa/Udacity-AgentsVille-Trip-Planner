@@ -31,5 +31,7 @@ htmlcov/
 *.zip
 
 # Classroom assets are downloaded and used locally.
+/project_starter.ipynb
+/project_lib.py
 /Project/project_starter.ipynb
 /Project/project_lib.py
